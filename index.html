@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de exercicio</title>
+    <style>
+        body{
+    background: rgb(111, 155, 184);
+    font: normal 15pt Arial;
+}
+header{
+    color: white;
+    text-align: center;
+}
+section{
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    margin: auto;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.411);
+}
+
+div{
+    text-align: center;
+    padding: 0px;
+}
+
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+    </style>
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>O que juju está fazendo?</h1>
+    </header>
+    <section>
+        <div id="escritahoras">
+            Agora são tal hora
+        </div>
+        <div>
+            <img id="imagem" src="" alt="Ju dormindo">
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Lucas Bontorin</p>
+    </footer>
+    <script>
+        function carregar(){
+    var agora = new Date;
+    var horas = agora.getHours()
+    var imagem = document.querySelector('img#imagem')
+    var txthoras = document.querySelector('div#escritahoras')
+    txthoras.innerHTML = `Agora são ${horas} horas e provavelmente a Ju está`
+    if(horas >=21 || horas <= 4){
+        imagem.src = 'https://lh3.googleusercontent.com/pw/AP1GczNy18byCQrJRyBdzXdotJn6FLAnX37Rgu-cJSrjIfLuOnAJpcO3EVhkwt2LQJKHZXGScX9CdgunYkOV4Vhy8jrkk5fYjNz85oYIk-u204Q60uE-pPrJJ4ec8gTnxBCZ86qAMlxrch8JRvMSTNdxDA7E1A=w150-h150-s-no-gm?authuser=0'
+        document.body.style.background = '#847955'
+        txthoras.innerHTML += '<p><strong>DORMINDO<strong></p>'
+    } else if(horas >=7 && horas < 12){
+        imagem.src = 'https://lh3.googleusercontent.com/pw/AP1GczNChg6_CQiRvrrhOV3mGjOkzx3W3F01jYmWEhN7n1BnOuR5dPH1fFM3G4yJW61xEyvj4Jt2dPc5xIEzyiPTZNsdVUBZVY9h7VufuWvXuaS4xLd62_K9gojMONRKCb4oToyo_VkirBEYOq5cGYmGdT37Bg=w150-h150-s-no-gm?authuser=0'
+        document.body.style.background = '#bbb090'
+        txthoras.innerHTML += '<p><strong>ESTAGIANDO<strong></p>'
+    }else if(horas >= 12 && horas < 18){
+        imagem.src = 'https://lh3.googleusercontent.com/pw/AP1GczPscZe2ul0svVEGiKQO73ISsk_r9h5B_uUBWJ7KDmyYYDLIkweTTWMZer9aq98vMxs9fIxgAkafpbcRNY-2m_5obZy15srMv9EUctoGgieklWe6iI-dsT_5pZXWlcxqdxMogueoWvHWaIPWv9D1rpFgSA=w150-h150-s-no-gm?authuser=0'
+        document.body.style.background = '#403e4e'
+        txthoras.innerHTML += '<p><strong>NA ESCOLA<strong></p>'
+    }else if(horas >= 18 && horas < 21){
+        imagem.src = 'https://lh3.googleusercontent.com/pw/AP1GczMVRoyh6nKvb1P5gBkljFc-vUH4C_kmfnhRgZa7NGsb9YTJ_sT_-HlLpE-9MT4Zu-fSX1teRBE5M44QgR-Xwrb10-aMZALjrc8R_U-XFjFAcPYGVx1IgElKDAkmuX_y4o4GJDztctL8RSzgOVMsxif5rUr25zfqnBz1tv5XfaW3SJUB63wS1tZUuVJMUsJUuv8UwiZs3V9i6x2YGkNQ5fuE3FVZ84t1KGPo3GvTUMJcvjCK6ZkHE5a3i4U2mYRq5rgYSpJkVoa3K0HqpqkuskvuPkd7YTUARwLyktaWwQpFFfNIu-4IoaISRzi6ou3hrMGgexCM__PfrXWgCRICuB9juJrrsUus-4-4edO38CWDX5dmEGolstpoLsL3YqVoFwTm8QUh2Mc3KOJ-Zt4K4t7OzZKDB4qpSnsu7EESQ8I6R4nOKx2HIkn0avcsQExZoNaUkVP_Y09krioqSQ8qvkM8Yof3zPLcKq2gXU7IFcOW_cEI81Z0DMraGcAVU_xr5vm9h_plmQQZVC6SsIuRgk0PRBvWBvOG-LYnkCjrPy4GnqVoNCT9Ecs_vys-4Exbt3VDR2Qb_rIM7ldcfB1t6Qvp7mUmCFYnOW6xeIAr8JZtK_lcYiwhyLmD-nyqg10d_bope9tfG0RZX4PZ6MsM4mQ-jctlI309LPH0ohOPX7xFdQ9lhGbEzbBvV1dAHPmJ-LcbgsClTVNRilf44bQSK9IwTou64zVGi-vSgir45dyUCSl3TLDXMMb6FmL5wMHUI5RlQ38HwkElIdzgz2xTefI4C-EGsauVPL8dsy6Jlgcwr0IMp2jDerZx1yJ_tmGgImDlga9r_B2FX4uASFAK0Qlvh6HXnjrUJDgXusgg0PXeddtoHOihW9RLlRAQL23HSUe0o4EWH-qu1XIh_JHgeKbjyTYUam5gjLsG7Cz6FyUzjElZeOHDI74CwVie=w150-h150-s-no-gm?authuser=0'
+        document.body.style.background = '#bf9f79'
+        txthoras.innerHTML += '<p><strong>ESTUDANDO<strong></p>'
+    }else {
+        imagem.src = 'https://lh3.googleusercontent.com/pw/AP1GczMNxsAdmoLYBbHIDLfHbDWhUDSPTxS0V4xbdZJrqMdjcHvv8uhVG5Q6i4UJMMIKLE4vpj5OxSODs5HcX-r8nUQqDdLi4A8T-a7Shn9IJiqw851c7OyvOPXDpR6VclEo8npCSGv-XOeazbwKGLNet4IaXg=w150-h150-s-no-gm?authuser=0'
+        document.body.style.background = '#989a8d'
+        txthoras.innerHTML += '<p><strong>ACORDANDO<strong></p>'
+    }
+
+
+}
+    </script>
+</body>
+</html>
